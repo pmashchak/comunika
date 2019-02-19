@@ -16,6 +16,7 @@ rails db:create:all
 4. Run `rails db:schema:load`
 5. Seed your db by running `rails db:seed`
 6. Start your server via `rails server`
+7. Visit `http://0.0.0.0:3000/admin/login` and login using seeded email and password
 
 ## Testing
 
