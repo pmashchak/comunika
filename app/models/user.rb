@@ -2,9 +2,10 @@ class User < ApplicationRecord
   ROLES = %w{ tenant owner manager }
 
   belongs_to :community
-  has_many   :messages
+  has_many   :messages, dependent: :destroy
 
-  validates :phone, phone: true, allow_blank: true
+  validates :community, presence: true
+  validates :phone, phone: { possible: true, allow_blank: true, types: [:mobile] }
 
   before_save :normalize_phone
 
