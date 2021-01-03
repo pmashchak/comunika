@@ -3,6 +3,7 @@ class TextService
 
   def initialize(message)
     @message = message
+    message.enque
   end
 
   def send
@@ -12,9 +13,9 @@ class TextService
         to: message.user.phone,
         body: get_body)
       message.sid = response.sid
-      message.enque
+      message.deliver
     rescue Twilio::REST::TwilioError => e
-      e.message
+      message.error
     end
   end
 
