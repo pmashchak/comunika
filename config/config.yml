@@ -1,0 +1,13 @@
+default: &default
+  twilio_account_sid: # SID here
+  twilio_auth_token: # Token here
+  twilio_phone_number: "+15005550006"
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default

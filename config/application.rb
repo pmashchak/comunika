@@ -29,5 +29,7 @@ module Comunika
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    config.autoload_paths += %W( lib/*.rb )
+    config.active_job.queue_adapter = :sidekiq
   end
 end
